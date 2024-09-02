@@ -1,0 +1,1489 @@
+/*--------------------------------------------------------------
+    Theme Name: Portfolio Pro Template
+    Theme URL: https://www.ogwebsolutions.com/
+    Author: OG Websolutions Pvt. Ltd.
+    Version:  1.0
+--------------------------------------------------------------*/
+
+
+/**
+@File:  Portfolio Pro Theme Styles
+This file contains the styling for the actual theme, this
+is the file you need to edit to change the look of the
+theme.
+
+# General Style
+    ## Google Font
+    ## Preloader
+    ## Back to top button
+    ## Typography
+# Header
+# Footer
+# Home Page
+	## Banner Section
+	## Service Section
+    ## Qualities Section
+    ## We Do Section
+    ## Choose Us Section
+    ## Reviews Section
+    ## Help Section
+    ## FAQ Section
+# Thank you Page
+# Privacy Policy & and Term & Conditions page
+
+**/
+
+
+/*--------------------------------------------------------------
+    # General
+--------------------------------------------------------------*/
+
+
+/* ----------------------------------
+    ## Google Font
+----------------------------------*/
+
+@import url('../../../../css2-5');
+
+/* ----------------------------------
+    ## Prelaoder
+----------------------------------*/
+
+
+/* ## Preload Spinner */
+
+.preloadSpinner {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    z-index: 99999;
+}
+
+.preloadSpinner::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;
+    background-color: #f5f7fa;
+    border: 1px solid #358aea;
+    border-top: 10px dotted #358aea;
+    border-radius: 100%;
+    animation: spinner 500ms infinite ease-in-out;
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width:767.98px) {
+    .preloadSpinner::after {
+        width: 50px;
+        height: 50px;
+        margin-top: -25px;
+        margin-left: -25px;
+        border-top: 5px dotted #99be4f;
+    }
+}
+
+
+/* ----------------------------------
+    ## Back to top button
+----------------------------------*/
+
+.backtotop {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    height: 40px;
+    width: 40px;
+    background-color: #358aea;
+    cursor: pointer;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
+    border-radius: 10px;
+    opacity: 0.9;
+    transition: opacity 200ms linear;
+    display: none;
+}
+
+.backtotop::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -7px;
+    margin-top: -4px;
+    transform: rotate(-45deg);
+    height: 0;
+    width: 0;
+    border-width: 3px 3px 0 0;
+    border-style: solid;
+    padding: 5px;
+    border-color: #fff;
+}
+
+.backtotop:hover {
+    opacity: 1;
+    transition: opacity 200ms linear;
+}
+
+
+/* ----------------------------------
+    ## Typography
+----------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #2f2f2f;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Patua One', cursive;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: 25px;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #2f2f2f;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media only screen and (max-width: 991.98px) {
+    p {
+        font-size: 16px;
+    }
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+dl,
+ol,
+ul {
+    margin-bottom: 0;
+    font-family: 'Montserrat', sans-serif;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0 !important;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+    -ms-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    color: #3c3c3c;
+}
+
+a {
+    text-decoration: none;
+    color: #e6441c;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #e6441c;
+}
+
+label {
+    font-weight: normal;
+}
+
+label.error {
+    color: #f00;
+    padding-left: 12px;
+    font-size: 14px;
+    padding-top: 5px;
+}
+
+.form-control {
+    height: auto;
+    padding: 15px 15px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+    height: 48px;
+    color: #aaaaaa;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #d5d5d5;
+    margin-bottom: 20px;
+}
+
+.form-control.error {
+    border-color: #f00;
+}
+
+.form-select {
+    background-image: url(../icons/carrot-icon.png);
+    background-size: 10px 8px;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+ ::-webkit-input-placeholder {
+    opacity: 1;
+    color: #aaaaaa;
+}
+
+ :-moz-placeholder {
+    opacity: 1;
+    color: #aaaaaa;
+}
+
+ ::-moz-placeholder {
+    opacity: 1;
+    color: #aaaaaa;
+}
+
+ :-ms-input-placeholder {
+    opacity: 1;
+    color: #aaaaaa;
+}
+
+figure {
+    margin: 0 0 0rem !important;
+}
+
+
+/*------ Font Weight ------*/
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+
+/*------ Custom Background Color ------*/
+
+.bg-color-white {
+    background-color: #fff;
+}
+
+.bg-gray {
+    background-color: #f5f5f5 !important;
+}
+
+
+/*------ Custom Text Color ------*/
+
+.text-black {
+    color: #211f1c !important;
+}
+
+.text-red {
+    color: #e6451b;
+}
+
+
+/*------ Box Shadow ------*/
+
+.box-shadow {
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/*------ Button Style ------*/
+
+.btn {
+    color: #fff !important;
+    font-weight: 600;
+    background-color: #e6451b !important;
+    font-size: 16px;
+    line-height: 1;
+    padding: 16px 40px;
+    box-shadow: inset 0 0px 0px 0 rgb(255 255 255 / 22%), 0 233px 233px 0 rgb(255 255 255 / 12%);
+    text-align: center;
+    display: inline-block;
+    border-radius: 0px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    border: 0px !important;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    text-decoration: none;
+}
+
+.btn-check:focus+.btn,
+.btn:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+@media only screen and (max-width: 991.98px) {
+    .btn {
+        font-size: 16px;
+    }
+    .master-card {
+        text-align: center;
+    }
+}
+
+
+/*------ image width ------*/
+
+@media only screen and (max-width: 767px) {
+    .w-100 {
+        width: 60% !important;
+    }
+}
+
+
+/*------ Custom Container ------*/
+
+@media only screen and (min-width: 1400px) {
+    .container {
+        max-width: 1170px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    .container {
+        max-width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .container {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+}
+
+
+/*------ Border ------*/
+
+.mid-border {
+    border-color: #e6451b;
+    max-width: 70px;
+    margin-left: 0px;
+    border-top-width: 3px;
+    border-top-style: solid;
+    margin-top: 15px;
+}
+
+
+/*------ Section Spacer ------*/
+
+.sectionPadding {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+@media only screen and (max-width: 991.98px) {
+    .sectionPadding {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .sectionPadding {
+        padding-top: 30px;
+    }
+}
+
+
+/*------ Section Title ------*/
+
+.section-title h2 {
+    font-size: 48px;
+    line-height: 1.3;
+}
+
+.section-title h3 {
+    font-size: 32px;
+}
+
+@media only screen and (max-width: 991.98px) {
+    .section-title p {
+        text-align: center;
+    }
+    .section-title h2 {
+        font-size: 35px;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .section-title h2 {
+        font-size: 26px;
+    }
+}
+
+
+/* ------------------------------------------------- 
+#Header	
+------------------------------------------------ */
+
+header {
+    position: static;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: #fff;
+}
+
+header p {
+    color: #358aea;
+}
+
+
+/*header.sticky {
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 5px #c1c1c1;
+    box-shadow: 0 0 5px #c1c1c1;
+    z-index: 11;
+}*/
+
+.header-logo img {
+    max-width: 170px;
+    width: 100%;
+}
+
+
+/*@media (max-width:767.98px) {
+    header p {
+        font-size: px;
+    }
+}*/
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+footer {
+    padding: 40px 0 40px;
+    background-color: #382755;
+}
+
+footer .footer-bottom .list-inline-item {
+    line-height: 1;
+}
+
+footer .footer-bottom .list-inline-item a {
+    font-size: 15px;
+    line-height: 1;
+    color: #fff !important;
+    display: inline-block;
+}
+
+footer .footer-bottom .list-inline-item a:hover {
+    text-decoration: underline;
+}
+
+footer .footer-bottom .list-inline-item:not(:last-child) {
+    border-right: 1px solid #fff;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+
+footer .footer-bottom p {
+    font-size: 16px;
+}
+
+footer .footer-bottom p {
+    margin-bottom: 12px;
+}
+
+footer .footer-bottom .copyright {
+    font-size: 15px;
+    color: #fff;
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+    footer {
+        padding: 30px 0 30px;
+    }
+    footer .footer-bottom .list-inline-item a,
+    footer .footer-bottom .copyright,
+    footer .footer-bottom .p {
+        font-size: 14px;
+    }
+}
+
+
+/*--------------------------------------------------------------
+# Home Page
+--------------------------------------------------------------*/
+
+
+/* ----------------------------------
+    ## Banner Section
+----------------------------------*/
+
+.bannerSection {
+    background: url(../images/john.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.bannerSection h1 {
+    font-size: 95px;
+    line-height: 1.1;
+    text-align: right;
+}
+
+.bannerSection .main-heading p {
+    text-align: right;
+}
+
+.bannerSection p {
+    font-size: 18px;
+    text-align: left;
+}
+
+.side-left-col {
+    margin-top: 130px;
+}
+
+.side-right-col {
+    margin-top: 300px;
+}
+
+@media only screen and (max-width: 1199.98px) {
+    .side-left-col {
+        margin-top: 70px;
+    }
+    .side-right-col {
+        margin-top: 190px;
+    }
+}
+
+@media only screen and (max-width:991.98px) {
+    .bannerSection {
+        background-position: center;
+        padding-top: 40px;
+    }
+    .bannerSection h1 {
+        font-size: 60px;
+        text-align: center;
+    }
+    .bannerSection .hero-img img {
+        width: 50% !important;
+    }
+    .bannerSection .mid-border {
+        margin: 0 auto;
+    }
+    .bannerSection .main-heading p,
+    .bannerSection .hero-img {
+        text-align: center;
+        font-size: 16px;
+    }
+    .bannerSection .side-right-col p {
+        font-size: 16px;
+    }
+    .side-left-col {
+        margin-top: 40px;
+    }
+    .side-right-col {
+        margin-top: 70px;
+    }
+    .bannerSection .side-right-col p {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    .bannerSection h1 {
+        font-size: 55px;
+    }
+    .bannerSection {
+        padding-bottom: 35px;
+    }
+    .bannerSection p {
+        font-size: 18px;
+    }
+    .bannerSection .side-right-col {
+        margin-top: 20px;
+    }
+    .bannerSection .side-right-col p {
+        text-align: center;
+        margin-top: 15px !important;
+    }
+    .bannerSection .side-right-col .mid-border {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .bannerSection {
+        padding-top: 15px;
+    }
+}
+
+
+/* ----------------------------------
+    ## Social Media Section
+----------------------------------*/
+
+.social-section .section-title {
+    border-bottom: 1px solid #ededed;
+    padding-bottom: 50px;
+}
+
+.social-section ul li .fa {
+    margin-right: 30px;
+}
+
+.social-section ul li .fa-instagram {
+    color: #e43b2c;
+}
+
+.social-section ul li .fa-twitter {
+    color: #1da1f2;
+}
+
+.social-section ul li .fa-facebook-square {
+    color: #4465ba;
+}
+
+.social-section ul li {
+    font-size: 32px;
+    font-weight: 700;
+    list-style: none;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+.social-section ul li span {
+    font-size: 18px;
+    padding-left: 60px;
+    display: block;
+    margin-top: 15px;
+}
+
+.video-poster {
+    background-image: url(../images/video-poster-image.webp);
+    padding-top: 300px;
+    padding-bottom: 300px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+}
+
+.video-poster .btn {
+    background-color: transparent !important;
+    font-size: 0px;
+    border: transparent;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.video-poster .btn img {
+    border-radius: 100%;
+}
+
+.modal-body .video {
+    width: 100%;
+    overflow: hidden;
+}
+
+.modal .btn-close {
+    position: absolute;
+    z-index: 1155;
+    top: 5px;
+    right: 5px;
+    opacity: 10 !important;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 10px;
+    width: 0.5em !important;
+    height: 0.5em !important;
+}
+
+.video-sec .modal-body {
+    padding: 0px !important;
+    background-color: transparent;
+    line-height: 0;
+}
+
+@media only screen and (max-width:991.98px) {
+    .social-section ul li .fa {
+        margin-right: 13px;
+    }
+    .social-section ul li {
+        font-size: 25px;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    .social-section ul li span {
+        font-size: 16px;
+        padding-left: 25px;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .social-section ul li {
+        font-size: 18px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .social-section ul li span {
+        font-size: 14px;
+        padding-left: 16px;
+    }
+    .video-poster {
+        padding-top: 170px;
+        padding-bottom: 170px;
+        width: 95%;
+    }
+}
+
+
+/* ----------------------------------
+    ## Award Section
+----------------------------------*/
+
+@media only screen and (max-width: 1199.98px) {
+    .awards-section .logo-listing li img {
+        width: 160px;
+    }
+}
+
+@media only screen and (max-width: 991.98px) {
+    .awards-section .logo-listing ul {
+        flex-wrap: wrap;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .awards-section .logo-listing ul {
+        margin-top: 15px !important;
+    }
+}
+
+
+/* ----------------------------------
+    ## Upcoming Section
+----------------------------------*/
+
+.upcoming-section.banner-section {
+    background-image: url(../images/banner-img.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.upcoming-section .section-title p {
+    font-size: 20px;
+}
+
+.upcoming-section h4 {
+    font-size: 26px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.upcoming-section .inner-items {
+    background-color: #fff;
+}
+
+.upcoming-section .inner-items .box-detail {
+    padding: 20px 20px;
+}
+
+@media only screen and (max-width: 991.98px) {
+    .upcoming-section h4 {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    .inner-items {
+        text-align: center;
+    }
+    .upcoming-section .inner-items img {
+        width: 100% !important;
+    }
+}
+
+
+/* ----------------------------------
+    ## Review Section
+----------------------------------*/
+
+.review-Section h5 {
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media only screen and (max-width:992.98px) {}
+
+@media only screen and (max-width: 767.98px) {}
+
+
+/* ----------------------------------
+    ## Learn Section
+------------------------------------*/
+
+.learn-section .feature-image img {
+    max-width: 80%;
+}
+
+@media only screen and (max-width:1199.98px) {
+    .learn-section .feature-image img {
+        max-width: 90%;
+    }
+    .learn-section .detail .section-title p {
+        text-align: left;
+    }
+}
+
+@media only screen and (max-width:991.98px) {
+    .learn-section .feature-image img {
+        max-width: 100%;
+    }
+    .learn-section .detail {
+        margin-top: 20px !important;
+    }
+    .learn-section .section-title {
+        text-align: left;
+    }
+}
+
+@media only screen and (max-width:767.98px) {
+    .learn-section .section-title,
+    .learn-section .detail .section-title h3,
+    .learn-section .detail .section-title p,
+    .learn-section .detail .btn-sec {
+        text-align: center;
+    }
+}
+
+
+/*--------------------------------------------------------------
+# Upsell Page
+--------------------------------------------------------------*/
+
+.up-downsell .bannerSection {
+    background-position: center;
+}
+
+.up-downsell .bannerSection h1 {
+    font-size: 52px;
+    text-align: left;
+    letter-spacing: 2px;
+    line-height: 1.3;
+}
+
+.up-downsell .bannerSection h1 span {
+    font-size: 52px;
+    display: inline-block;
+}
+
+.up-downsell .bannerSection h2 {
+    font-size: 26px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.bottom-content p {
+    font-size: 14px;
+}
+
+.up-downsell .btn {
+    font-size: 22px;
+    padding: 22px 22px;
+}
+
+.left-img {
+    text-align: right;
+}
+
+@media only screen and (max-width:991.98px) {
+    .up-downsell .bannerSection h1 {
+        text-align: center;
+    }
+    .up-downsell .bannerSection .btn-sec,
+    .up-downsell .bannerSection .bottom-content p {
+        text-align: center;
+    }
+    .up-downsell .bannerSection .left-img {
+        text-align: center;
+        margin-top: 30px !important;
+    }
+    .up-downsell .bannerSection .section-title {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width:767.98px) {
+    .up-downsell .bannerSection h1 {
+        font-size: 35px;
+    }
+    .up-downsell .bannerSection h2 {
+        font-size: 24px;
+    }
+    .up-downsell .bannerSection h1 span {
+        font-size: 35px;
+    }
+    .up-downsell .btn-sec {
+        text-align: center;
+    }
+    .bottom-content p {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width:575.98px) {
+    .up-downsell .bannerSection .left-img img {
+        width: 70%;
+    }
+    .up-downsell .bannerSection h2 {
+        font-size: 18px;
+    }
+    .up-downsell .btn {
+        font-size: 18px;
+        padding: 20px 20px;
+    }
+}
+
+
+/*--------------------------------------------------------------
+# Order Page
+--------------------------------------------------------------*/
+
+.order-page .bannerSection .section-title h1 {
+    font-size: 55px;
+}
+
+.order-page .bannerSection {
+    background-position: center;
+}
+
+
+/* ----------------------------------
+## Order Section
+----------------------------------*/
+
+.order-page .bannerSection {
+    background-size: cover;
+}
+
+.formcontentSec {
+    border-radius: 10px;
+    max-width: 1010px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px;
+    background: #ffffff;
+    -webkit-box-shadow: 0 1px 5px rgb(0 0 0 / 20%);
+    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 5px rgb(0 0 0 / 20%);
+}
+
+.formcontentSec .form-status {
+    margin-top: 40px;
+    display: none;
+}
+
+.your_productlist {
+    background: #e4262612;
+    padding: 15px;
+    float: left;
+    width: 100%;
+    border: 1px solid #d9d9d9;
+    margin-bottom: 30px;
+}
+
+.order_Section .left-col .your_productlist ul {
+    margin: 10px 0 0;
+    padding: 0;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.order_Section .left-col .your_productlist li {
+    background: none;
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    color: #757575;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.order_Section .left-col .your_productlist li:not(:last-child) {
+    border-bottom: 1px solid #b0d2de;
+    padding: 0 0 20px;
+    margin: 0 0 20px;
+}
+
+.order_Section .left-col .your_productlist li:first-child,
+.order_Section .left-col .your_productlist li:last-child {
+    color: #000;
+    font-size: 15px;
+}
+
+.order_Section .left-col .your_productlist li:last-child {
+    font-size: 18px;
+    padding-left: 0;
+}
+
+.order_Section .left-col .your_productlist li .pull-left {
+    float: left;
+}
+
+.order_Section .left-col .your_productlist li .pull-right {
+    float: right;
+}
+
+.order_Section h2.headingsec {
+    color: #e42626;
+    font-size: 20px;
+    line-height: 30px;
+    border-bottom: 2px dotted #c7c7c7;
+    padding: 0 0 20px;
+    margin: 0 0 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.order_Section .btn-outer {
+    text-align: center;
+}
+
+.declaration p {
+    font-size: 14px;
+    color: #9b9b9b;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 0 15px;
+}
+
+.order_Section .cards {
+    text-align: center;
+}
+
+.order_Section .cards img {
+    display: inline-block;
+}
+
+.order_Section .pay-btn.btn {
+    font-size: 20px;
+    padding: 20px 80px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.pay-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.pay-btn .btn-title {
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 1199.98px) {
+    .order-page .bannerSection p {
+        font-size: 20px;
+    }
+    .order_Section .pay-btn.btn {
+        font-size: 22px;
+        padding: 20px 85px;
+    }
+}
+
+@media only screen and (max-width: 991.98px) {
+    .order-page .bannerSection .section-title h1 {
+        font-size: 45px;
+        text-align: center;
+    }
+    .order-page .bannerSection .section-title h1 span {
+        font-size: 45px;
+    }
+    .order-page .bannerSection .left-img {
+        text-align: center;
+    }
+    .order_Section .container {
+        max-width: 720px;
+    }
+    .order_Section .pay-btn.btn {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .order-page .bannerSection {
+        padding-bottom: 60px;
+    }
+    .formcontentSec {
+        padding: 20px;
+    }
+    .order_Section h2.headingsec {
+        font-size: 18px;
+    }
+    .order_Section .left-col .your_productlist li {
+        font-size: 12px;
+    }
+    .order_Section .left-col .your_productlist li:first-child,
+    .order_Section .left-col .your_productlist li:last-child {
+        font-size: 14px;
+    }
+    .declaration p {
+        font-size: 13px;
+    }
+    .order_Section .pay-btn.btn {
+        font-size: 18px;
+    }
+    .order-page .bannerSection p {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .order-page .bannerSection {
+        background-size: contain;
+    }
+    .order-page .bannerSection .section-title h1 {
+        font-size: 38px;
+    }
+    .order_Section .container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .order-page .bannerSection h1 {
+        font-size: 30px;
+    }
+    .order-page .bannerSection p {
+        font-size: 16px;
+    }
+    .order_Section .pay-btn.btn {
+        padding: 18px 22px;
+        width: 100%;
+    }
+    .pay-btn .btn-subtitle {
+        font-size: 14px;
+    }
+}
+
+
+/*--------------------------------------------------------------
+# Order confirmation(Thank you)/Order Cancelled Page
+--------------------------------------------------------------*/
+
+.thank-you .bannerSection {
+    background-position: center;
+}
+
+
+/* ----------------------------------
+    ## Thank You Content Section
+----------------------------------*/
+
+.thank-you .bannerSection {
+    background: none;
+}
+
+.thank-you .bannerSection h1 {
+    font-size: 60px;
+}
+
+.thank-you .bannerSection p {
+    font-size: 20px;
+}
+
+.thankyouContentSec p {
+    font-size: 19px;
+}
+
+@media only screen and (max-width: 1199.98px) {
+    .thank-you .bannerSection h1 {
+        font-size: 55px;
+    }
+    .thank-you .bannerSection p {
+        font-size: 21px;
+    }
+    .thankyouContentSec p {
+        font-size: 19px;
+    }
+}
+
+@media only screen and (max-width: 991.98px) {
+    .thankyouContentSec p {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    .thank-you .bannerSection {
+        padding-bottom: 75px;
+    }
+    .thank-you .bannerSection h1 {
+        font-size: 45px;
+    }
+    .thank-you .bannerSection p {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .thank-you .bannerSection h1 {
+        font-size: 38px;
+    }
+    .thankyouContentSec p {
+        font-size: 16px;
+    }
+    .fb-img img {
+        width: 100%;
+    }
+}
+
+
+/*--------------------------------------------------------------
+#  Privacy Policy and Term & Conditions page
+--------------------------------------------------------------*/
+
+.termcond_privacypilocy.bannerSection {
+    background: none;
+}
+
+.termcond_privacypilocy {
+    padding-bottom: 100px;
+}
+
+.privacypolicyterms ul {
+    display: block !important;
+    list-style-type: disc !important;
+    padding-left: 20px !important;
+}
+
+.termcond_privacypilocy h1 {
+    font-size: 60px;
+}
+
+.privacypolicyterms h2 {
+    font-size: 40px;
+}
+
+.privacypolicyterms h3 {
+    font-size: 24px;
+}
+
+.privacypolicyterms h4 {
+    font-size: 22px;
+}
+
+.privacypolicyterms p {
+    font-size: 18px;
+}
+
+.privacypolicyterms p a {
+    color: #1577da;
+}
+
+.privacypolicyterms li {
+    font-size: 18px;
+}
+
+.privacypolicyterms .highlight {
+    font-weight: 500;
+}
+
+.privacypolicyterms p,
+.privacypolicyterms li {
+    font-weight: 400;
+}
+
+.privacypolicyterms h2,
+.privacypolicyterms h3,
+.privacypolicyterms h4 {
+    font-weight: 500;
+}
+
+.termcond_privacypilocy .section-title {
+    padding-bottom: 0;
+}
+
+@media only screen and (max-width: 1199.99px) {
+    .termcond_privacypilocy h1 {
+        font-size: 55px;
+    }
+}
+
+@media only screen and (max-width: 991.99px) {
+    .privacypolicyterms h2 {
+        text-align: left;
+    }
+    .termcond_privacypilocy h1 {
+        font-size: 45px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .termcond_privacypilocy {
+        padding-top: 60px !important;
+        padding-bottom: 65px;
+    }
+    .privacypolicyterms h2 {
+        font-size: 28px;
+    }
+    .privacypolicyterms h3 {
+        font-size: 22px;
+    }
+    .privacypolicyterms h4 {
+        font-size: 20px;
+    }
+    .privacypolicyterms p,
+    .privacypolicyterms li {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 567.98px) {
+    .termcond_privacypilocy h1 {
+        font-size: 35px;
+    }
+}
+
+
+/*--------------------------------------------------------------
+#  Error page
+--------------------------------------------------------------*/
+
+/* stripe card */
+.payment-outer{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 22px 15px 5px;
+    background-color: #e9e9e9;
+    position: relative;
+    margin-top:10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.payment-outer:before{
+    content: "";
+    position: absolute;
+    left: 35px;
+	top: -8px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #e9e9e9;
+}
+.payment-outer .form-group{
+    width: 33.33%;
+    padding: 0 7px;
+}
+.payment-outer .form-group.card-number-group{
+    width: 100%;
+}
+.payment-outer .form-group #card_number{
+    background-image: url('../images/cards.png');
+    background-repeat: no-repeat;
+    background-size: 120px;
+    background-position: right 10px center;
+    padding-right: 140px;
+}
+.paypal-card-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom:15px;
+}
+.paypal-card-group label:first-child{
+    margin-bottom: 10px;
+}
+.form-group.btn-outer{
+    position: relative;
+}
+.form-group.btn-outer #loader{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    background-color: rgba(0,0,0,0.4);
+	border-radius: 5px;
+}
+form #loader img{
+    width: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -10px;
+    margin-left: -10px;
+}
+@media only screen and (max-width: 390px) {
+    .payment-outer{
+   	 padding: 15px 10px 0px;
+    }
+    .payment-outer .form-group #card_number{
+   	 padding-right: 100px;
+   	 background-size: 80px;
+    }
+    form select{
+   	 background-size: 12px;
+    }
+}
+/* stripe card end */

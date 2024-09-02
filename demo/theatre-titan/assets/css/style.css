@@ -1,0 +1,1468 @@
+/*--------------------------------------------------------------
+    Theme Name: Theatre Titan Template
+    Theme URL: https://www.ogwebsolutions.com/
+    Author: OG Websolutions Pvt. Ltd.
+    Version:  1.0
+--------------------------------------------------------------*/
+
+
+/**
+@File:  Theatre Titan Theme Styles
+This file contains the styling for the actual theme, this
+is the file you need to edit to change the look of the
+theme.
+
+# General Style
+    ## Google Font
+    ## Preloader
+    ## Back to top button
+    ## Typography
+# Header
+# Footer
+# Home Page
+	## Banner Section
+	## Service Section
+    ## Qualities Section
+    ## We Do Section
+    ## Choose Us Section
+    ## Reviews Section
+    ## Help Section
+    ## FAQ Section
+# Thank you Page
+# Privacy Policy & and Term & Conditions page
+
+**/
+
+
+/*--------------------------------------------------------------
+    # General
+--------------------------------------------------------------*/
+
+
+/* ----------------------------------
+    ## Google Font
+----------------------------------*/
+
+@import url('../../../../css2-8');
+
+/* ----------------------------------
+    ## Prelaoder
+----------------------------------*/
+
+
+/* ## Preload Spinner */
+
+.preloadSpinner {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    z-index: 99999;
+}
+
+.preloadSpinner::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;
+    background-color: #f5f7fa;
+    border: 1px solid #358aea;
+    border-top: 10px dotted #358aea;
+    border-radius: 100%;
+    animation: spinner 500ms infinite ease-in-out;
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width:767.98px) {
+    .preloadSpinner::after {
+        width: 50px;
+        height: 50px;
+        margin-top: -25px;
+        margin-left: -25px;
+        border-top: 5px dotted #99be4f;
+    }
+}
+
+
+/* ----------------------------------
+    ## Back to top button
+----------------------------------*/
+
+.backtotop {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    height: 40px;
+    width: 40px;
+    background-color: #358aea;
+    cursor: pointer;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
+    border-radius: 10px;
+    opacity: 0.9;
+    transition: opacity 200ms linear;
+    display: none;
+}
+
+.backtotop::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -7px;
+    margin-top: -4px;
+    transform: rotate(-45deg);
+    height: 0;
+    width: 0;
+    border-width: 3px 3px 0 0;
+    border-style: solid;
+    padding: 5px;
+    border-color: #fff;
+}
+
+.backtotop:hover {
+    opacity: 1;
+    transition: opacity 200ms linear;
+}
+
+
+/* ----------------------------------
+    ## Typography
+----------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #2f2f2f;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: 25px;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #2f2f2f;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media only screen and (max-width: 991.98px) {
+    p {
+        font-size: 16px;
+    }
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+dl,
+ol,
+ul {
+    margin-bottom: 0;
+    font-family: 'Montserrat', sans-serif;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0 !important;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+    -ms-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    color: #3c3c3c;
+}
+
+a {
+    text-decoration: none;
+    color: #e6441c;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+label {
+    font-weight: normal;
+}
+
+label.error {
+    color: #f00;
+    padding-left: 12px;
+    font-size: 14px;
+    padding-top: 5px;
+}
+
+.form-control {
+    height: auto;
+    padding: 15px 15px;
+    font-size: 16px;
+    font-weight: 500;
+    height: 48px;
+    line-height: 1;
+    color: #aaaaaa;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #d5d5d5;
+    margin-bottom: 20px;
+}
+
+.form-control.error {
+    border-color: #f00 !important;
+}
+
+.form-select {
+    background-image: url(../icons/carrot-icon.png);
+    background-size: 10px 8px;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+ ::-webkit-input-placeholder {
+    opacity: 1;
+    color: #aaaaaa;
+}
+
+ :-moz-placeholder {
+    opacity: 1;
+    color: #aaaaaa;
+}
+
+ ::-moz-placeholder {
+    opacity: 1;
+    color: #aaaaaa;
+}
+
+ :-ms-input-placeholder {
+    opacity: 1;
+    color: #aaaaaa;
+}
+
+figure {
+    margin: 0 0 0rem !important;
+}
+
+
+/*------ Font Weight ------*/
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+
+/*------ Custom Background Color ------*/
+
+.bg-color-black {
+    background-color: #000000;
+}
+
+
+/*------ Custom Text Color ------*/
+
+.text-white {
+    color: #fff;
+}
+
+.text-yellow {
+    color: #e4cb86;
+}
+
+
+/*------ Box Shadow ------*/
+
+.box-shadow {
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/*------ Button Style ------*/
+
+.btn {
+    color: #000000 !important;
+    font-weight: 700;
+    background-color: #f2f2f2 !important;
+    font-size: 22px;
+    line-height: 1;
+    padding: 17px 30px;
+    box-shadow: inset 0 0px 0px 0 rgb(255 255 255 / 22%), 0 233px 233px 0 rgb(255 255 255 / 12%);
+    text-align: center;
+    display: inline-block;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    border: 0px !important;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    text-decoration: none;
+}
+
+.btn-check:focus+.btn,
+.btn:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+@media only screen and (max-width: 991.98px) {
+    .btn {
+        font-size: 16px;
+    }
+    .master-card {
+        text-align: center;
+    }
+}
+
+
+/*------ image width ------*/
+
+@media only screen and (max-width: 767px) {
+    .w-100 {
+        width: 60% !important;
+    }
+}
+
+
+/*------ Custom Container ------*/
+
+@media only screen and (min-width: 1400px) {
+    .container {
+        max-width: 1170px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media only screen and (max-width: 991.98px) {
+    .container {
+        max-width: 92%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .container {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+}
+
+
+/*------ Section Spacer ------*/
+
+.sectionPadding {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+@media only screen and (max-width: 991.98px) {
+    .sectionPadding {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+}
+
+
+/*------ Section Title ------*/
+
+.section-title h2 {
+    font-size: 44px;
+    line-height: 1.3;
+}
+
+.section-title h3 {
+    font-size: 32px;
+}
+
+.section-title h4 {
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media only screen and (max-width:1024.98px) {
+    .section-title h2 {
+        font-size: 40px;
+    }
+}
+
+@media only screen and (max-width: 991.98px) {
+    .section-title h2 {
+        font-size: 35px;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .section-title h2 {
+        font-size: 30px;
+    }
+}
+
+
+/* ------------------------------------------------- 
+#Header	
+------------------------------------------------ */
+
+header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: transparent;
+}
+
+
+/*header.sticky {
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 5px #c1c1c1;
+    box-shadow: 0 0 5px #c1c1c1;
+    z-index: 11;
+}*/
+
+.header-logo img {
+    max-width: 170px;
+    width: 100%;
+}
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+footer {
+    padding: 40px 0 40px;
+    background-color: #000000;
+    border-top: 1px solid #e4cb86;
+}
+
+footer .footer-bottom .list-inline-item {
+    line-height: 1;
+}
+
+footer .footer-bottom .list-inline-item a {
+    font-size: 15px;
+    line-height: 1;
+    color: #fff !important;
+    display: inline-block;
+}
+
+footer .footer-bottom .list-inline-item a:hover {
+    text-decoration: underline;
+}
+
+footer .footer-bottom .list-inline-item:not(:last-child) {
+    border-right: 1px solid #fff;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+
+footer .footer-bottom p {
+    font-size: 16px;
+}
+
+footer .footer-bottom p {
+    margin-bottom: 12px;
+}
+
+footer .footer-bottom .copyright {
+    font-size: 15px;
+    color: #fff;
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+    footer {
+        padding: 30px 0 30px;
+    }
+    footer .footer-bottom .list-inline-item a,
+    footer .footer-bottom .copyright,
+    footer .footer-bottom .p {
+        font-size: 14px;
+    }
+}
+
+
+/*--------------------------------------------------------------
+# Home Page
+--------------------------------------------------------------*/
+
+
+/* ----------------------------------
+    ## Banner Section
+----------------------------------*/
+
+.bannerSection {
+    background: url(../images/banner-bg-artist.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right center;
+    padding-top: 180px;
+    padding-bottom: 180px;
+}
+
+.bannerSection h1 {
+    font-size: 85px;
+    line-height: 1.1;
+}
+
+.bannerSection p {
+    font-size: 22px;
+}
+
+.item-detail h2 {
+    font-size: 40px;
+}
+
+.item-detail .bold-text {
+    font-size: 18px;
+}
+
+.item-detail p {
+    font-size: 16px;
+}
+
+.box-items .box-detail h5 {
+    font-size: 24px;
+}
+
+.subtitle h4 {
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media only screen and (max-width: 1024.98px) {
+    .bannerSection {
+        padding-top: 150px;
+        padding-bottom: 100px;
+    }
+    .bannerSection p {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width:991.98px) {
+    .bannerSection h1 {
+        font-size: 60px;
+    }
+    .bannerSection p {
+        font-size: 18px;
+    }
+    .box-items .box-detail h5 {
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width:575.98px) {
+    .bannerSection {
+        padding-top: 130px;
+        padding-bottom: 70px;
+        background-position: 90%;
+    }
+    .bannerSection h1 {
+        font-size: 40px;
+    }
+    .bannerSection p {
+        font-size: 16px;
+    }
+}
+
+
+/* ----------------------------------
+    ## Biography Section
+----------------------------------*/
+
+@media only screen and (max-width:991.98px) {
+    .biography-section .col-lg-6 {
+        padding-left: 0px !important;
+    }
+    .biography-section .row.pt-5 {
+        padding: 0px !important;
+    }
+    .biography-section .section-title,
+    .biography-section .detail {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    .biography-section .row.pt-5 {
+        padding: 0px !important;
+    }
+    .biography-section .detail p {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+    .biography-section .box-items {
+        text-align: center;
+    }
+    .item-detail h2 {
+        font-size: 35px;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {}
+
+
+/* ----------------------------------
+    ## Acting Section
+----------------------------------*/
+
+@media only screen and (max-width: 767.98px) {
+    .acting-section {
+        text-align: center;
+    }
+    .acting-section {
+        padding-top: 0px;
+    }
+    .acting-section .row.pt-5 {
+        padding-top: 0px !important;
+    }
+    .acting-section .text-yellow.mt-4 {
+        margin-top: 0px !important;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .acting-section h3 {
+        font-size: 25px;
+    }
+}
+
+
+/* ----------------------------------
+    ## Upcoming Section
+----------------------------------*/
+
+.upcoming-section .section-title h2 {
+    font-size: 35px;
+}
+
+.upcoming-section .left-content h3 {
+    font-size: 40px;
+}
+
+.upcoming-section .left-content h5 {
+    font-size: 22px;
+}
+
+
+/*.upcoming-section,
+.subscribe-section {
+    border-bottom: 1px solid #e4cb86;
+}*/
+
+@media only screen and (max-width: 991.98px) {
+    .upcoming-section .section-title,
+    .upcoming-section .left-content,
+    .upcoming-section .left-img {
+        text-align: center;
+    }
+    .upcoming-section .left-img img {
+        width: 60% !important;
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    .upcoming-section {
+        text-align: center;
+    }
+    .upcoming-section .left-img img {
+        text-align: center;
+        width: 90% !important;
+    }
+    .upcoming-section .left-content {
+        margin-top: 25px !important;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .upcoming-section .section-title h2 {
+        font-size: 30px;
+    }
+}
+
+
+/* ----------------------------------
+    ## Subscribe Section
+----------------------------------*/
+
+.subscribe-section .consultationForm {
+    max-width: 600px !important;
+    margin: 0 auto;
+}
+
+.subscribe-section .form-control {
+    border: 1px solid #d5d5d5 !important;
+}
+
+@media only screen and (max-width: 575.98px) {
+    .subscribe-section {
+        padding-top: 0px;
+    }
+}
+
+*
+/*--------------------------------------------------------------
+# Upsell Page
+--------------------------------------------------------------*/
+
+.up-downsell .bannerSection {
+    background-image: none;
+    padding-top: 130px;
+    padding-bottom: 65px;
+}
+
+.up-downsell .bannerSection h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+}
+
+.up-downsell .sub-heading h2 {
+    font-size: 53px;
+}
+
+.progress {
+    height: 45px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.progress-bar {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-weight: 900;
+    font-size: 17px;
+    padding: 7px;
+    text-align: center;
+    background-color: #428bca;
+    width: 50%;
+}
+
+.video {
+    border: 7px solid #fff;
+    margin-top: 35px;
+}
+
+.up-downsell .listing ul {
+    display: block;
+}
+
+.up-downsell .listing ul li {
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.up-downsell .listing ul li .fa {
+    margin-right: 15px;
+    color: #e3ca86;
+}
+
+.up-downsell .order-btn span {
+    display: block;
+}
+
+.up-downsell .btn {
+    background-color: #e3ca86 !important;
+    text-align: center;
+}
+
+.up-downsell .order-btn .btn-main {
+    font-size: 24px;
+    line-height: 1.3;
+}
+
+.up-downsell .order-btn .btn-sub {
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+.up-downsell .bottom-content a {
+    color: #fff !important;
+    font-size: 16px;
+}
+
+.up-downsell {
+    border-bottom: 1px solid #e3ca86;
+}
+
+@media only screen and (max-width:1199.98px) {
+    .up-downsell .bannerSection h1 {
+        font-size: 70px;
+    }
+}
+
+@media only screen and (max-width:991.98px) {
+    .up-downsell .sub-heading h2 {
+        font-size: 40px;
+    }
+    .up-downsell .listing ul li {
+        font-size: 22px;
+        margin-top: 0px;
+    }
+}
+
+@media only screen and (max-width:767.98px) {
+    .up-downsell .bannerSection h1 {
+        text-align: center;
+        font-size: 40px;
+    }
+    .up-downsell .bannerSection h2 {
+        font-size: 30px;
+    }
+    .up-downsell .bannerSection h3 {
+        font-size: 27px;
+    }
+    .up-downsell .listing ul li {
+        font-size: 20px;
+        margin-top: 0px;
+    }
+    .video .w-100 {
+        width: 100% !important;
+    }
+    .videoSection .right-img {
+        text-align: center;
+    }
+    .videoSection .right-img img {
+        width: 80% !important;
+    }
+}
+
+@media only screen and (max-width:575.98px) {
+    .up-downsell .bannerSection {
+        padding-top: 110px;
+    }
+    .up-downsell .bannerSection h1 {
+        font-size: 35px;
+    }
+    .up-downsell .sub-heading h2 {
+        font-size: 24px;
+    }
+    .up-downsell .bannerSection h3 {
+        font-size: 20px;
+    }
+    .up-downsell .listing ul li {
+        font-size: 18px;
+    }
+    .progress {
+        width: 100%;
+    }
+    .progress-bar {
+        font-size: 14px;
+        width: 100%;
+    }
+    .up-downsell .btn {
+        width: 100%;
+        padding: 15px 15px !important;
+    }
+    .up-downsell .order-btn .btn-main {
+        font-size: 16px;
+    }
+    .up-downsell .order-btn .btn-sub {
+        font-size: 11px;
+    }
+    .up-downsell .bottom-content a {
+        color: #fff !important;
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 376.98px) {
+    .up-downsell .order-btn .btn-main {
+        font-size: 14px;
+    }
+}
+
+
+/*--------------------------------------------------------------
+# Order Page
+--------------------------------------------------------------*/
+
+.order-page .bannerSection {
+    background-image: none;
+    padding-top: 145px;
+    padding-bottom: 70px;
+}
+
+.order-page .bannerSection .section-title h1 {
+    font-size: 60px;
+}
+
+
+/* ----------------------------------
+## Order Section
+----------------------------------*/
+
+.order_Section {
+    padding-bottom: 80px;
+}
+
+.formcontentSec {
+    border-radius: 10px;
+    max-width: 1010px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 45px 30px;
+    background: #ffffff;
+    -webkit-box-shadow: 0 1px 5px rgb(0 0 0 / 20%);
+    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 5px rgb(0 0 0 / 20%);
+    background-color: #f9f9f933;
+}
+
+.formcontentSec .form-status {
+    margin-top: 40px;
+    display: none;
+}
+
+.your_productlist {
+    background: #fff;
+    padding: 15px;
+    float: left;
+    width: 100%;
+    border: 1px solid #d9d9d9;
+    margin-bottom: 30px;
+}
+
+.order_Section .left-col .your_productlist ul {
+    margin: 10px 0 0;
+    padding: 0;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.order_Section .left-col .your_productlist li {
+    background: none;
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    color: #757575;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.order_Section .left-col .your_productlist li:not(:last-child) {
+    border-bottom: 1px solid #b0d2de;
+    padding: 0 0 20px;
+    margin: 0 0 20px;
+}
+
+.order_Section .left-col .your_productlist li:first-child,
+.order_Section .left-col .your_productlist li:last-child {
+    color: #000;
+    font-size: 15px;
+}
+
+.order_Section .left-col .your_productlist li:last-child {
+    font-size: 18px;
+    padding-left: 0;
+}
+
+.order_Section .left-col .your_productlist li .pull-left {
+    float: left;
+}
+
+.order_Section .left-col .your_productlist li .pull-right {
+    float: right;
+}
+
+.order_Section h2.headingsec {
+    /*color: #2c2c2c;*/
+    font-size: 20px;
+    line-height: 30px;
+    border-bottom: 2px dotted #c7c7c7;
+    padding: 0 0 20px;
+    margin: 0 0 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.order_Section .btn-outer {
+    text-align: center;
+}
+
+.declaration p {
+    font-size: 14px;
+    color: #9b9b9b;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 0 15px;
+}
+
+.order_Section .cards {
+    text-align: center;
+}
+
+.order_Section .cards img {
+    display: inline-block;
+}
+
+.pay-btn.btn {
+    font-size: 20px;
+    padding: 20px 80px;
+    width: 100%;
+    background-color: #e3ca86 !important;
+}
+
+.pay-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.pay-btn .btn-title {
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 1199.98px) {
+    .order-page .bannerSection p {
+        font-size: 20px;
+    }
+    .order_Section .pay-btn.btn {
+        font-size: 22px;
+        padding: 20px 85px;
+    }
+}
+
+@media only screen and (max-width: 991.98px) {
+    .order-page .bannerSection .section-title h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+    .order_Section .container {
+        max-width: 720px;
+    }
+    .order_Section .pay-btn.btn {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .formcontentSec {
+        padding: 20px;
+    }
+    .order_Section h2.headingsec {
+        font-size: 18px;
+    }
+    .order_Section .left-col .your_productlist li {
+        font-size: 12px;
+    }
+    .order_Section .left-col .your_productlist li:first-child,
+    .order_Section .left-col .your_productlist li:last-child {
+        font-size: 14px;
+    }
+    .declaration p {
+        font-size: 13px;
+    }
+    .order_Section .pay-btn.btn {
+        font-size: 18px;
+    }
+    .order-page .bannerSection p {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .order-page .bannerSection .section-title h1 {
+        font-size: 32px;
+    }
+    .order_Section .container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .order-page .bannerSection p {
+        font-size: 16px;
+    }
+    .order_Section .pay-btn.btn {
+        padding: 18px 20px;
+        width: 100%;
+    }
+    .pay-btn .btn-subtitle {
+        font-size: 14px;
+    }
+}
+
+
+/*--------------------------------------------------------------
+# Order confirmation(Thank you)/Order Cancelled Page
+--------------------------------------------------------------*/
+
+.thank-you .bannerSection {
+    background-image: none;
+    padding-bottom: 110px;
+}
+
+
+/* ----------------------------------
+    ## Thank You Content Section
+----------------------------------*/
+
+
+/*========== Social Share ==========*/
+
+.social-share {
+    background-color: #ebebeb;
+}
+
+.social-share .fa {
+    padding: 10px 25px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 2px;
+    border-radius: 3px;
+}
+
+.social-share .fa:hover {
+    opacity: 0.8;
+}
+
+.social-share .fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.social-share .fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.social-share {
+    padding: 40px 0;
+}
+
+.social-share span {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    padding-left: 5px;
+}
+
+.thank-you .bannerSection h1 {
+    font-size: 60px;
+}
+
+.thank-you .bannerSection p {
+    font-size: 20px;
+}
+
+.thankyouContentSec p {
+    font-size: 19px;
+}
+
+.thankyouContentSec h5 {
+    font-size: 24px;
+}
+
+@media only screen and (max-width: 1199.98px) {
+    .thank-you .bannerSection h1 {
+        font-size: 55px;
+    }
+    .thank-you .bannerSection p {
+        font-size: 21px;
+    }
+    .thankyouContentSec p {
+        font-size: 19px;
+    }
+}
+
+@media only screen and (max-width: 991.98px) {
+    .thank-you .bannerSection h1 {
+        font-size: 45px;
+    }
+    .thankyouContentSec p {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    .thank-you .bannerSection {
+        padding-bottom: 75px;
+    }
+    .thank-you .bannerSection h1 {
+        font-size: 40px;
+    }
+    .thank-you .bannerSection p {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .thank-you .bannerSection {
+        padding-bottom: 65px;
+        padding-top: 120px;
+    }
+    .thank-you .bannerSection h1 {
+        font-size: 30px;
+    }
+    .thankyouContentSec p {
+        font-size: 16px;
+    }
+    .thankyouContentSec .fb-img img {
+        width: 100%;
+    }
+    .thankyouContentSec h5 {
+        font-size: 22px;
+    }
+}
+
+
+/*--------------------------------------------------------------
+#  Privacy Policy and Term & Conditions page
+--------------------------------------------------------------*/
+
+.termcond_privacypilocy.bannerSection {
+    background-image: none;
+}
+
+.termcond_privacypilocy {
+    padding-top: 130px;
+    padding-bottom: 80px;
+}
+
+.privacypolicyterms ul {
+    display: block !important;
+    list-style-type: disc !important;
+}
+
+.termcond_privacypilocy h1 {
+    font-size: 60px;
+}
+
+.privacypolicyterms h2 {
+    font-size: 40px;
+}
+
+.privacypolicyterms h3 {
+    font-size: 24px;
+}
+
+.privacypolicyterms h4 {
+    font-size: 22px;
+}
+
+.privacypolicyterms p {
+    font-size: 18px;
+}
+
+.privacypolicyterms p a {
+    color: #1577da;
+}
+
+.privacypolicyterms li {
+    font-size: 18px;
+}
+
+.privacypolicyterms .highlight {
+    font-weight: 500;
+}
+
+.privacypolicyterms p,
+.privacypolicyterms li {
+    font-weight: 400;
+}
+
+.privacypolicyterms h2,
+.privacypolicyterms h3,
+.privacypolicyterms h4 {
+    font-weight: 500;
+}
+
+.termcond_privacypilocy .section-title {
+    padding-bottom: 0;
+}
+
+@media only screen and (max-width: 1199.99px) {
+    .termcond_privacypilocy h1 {
+        font-size: 55px;
+    }
+}
+
+@media only screen and (max-width: 991.99px) {
+    .privacypolicyterms h2 {
+        text-align: left;
+    }
+    .termcond_privacypilocy h1 {
+        font-size: 45px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .privacypolicyterms h2 {
+        font-size: 28px;
+    }
+    .privacypolicyterms h3 {
+        font-size: 22px;
+    }
+    .privacypolicyterms h4 {
+        font-size: 20px;
+    }
+    .privacypolicyterms p,
+    .privacypolicyterms li {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .termcond_privacypilocy {
+        padding-top: 100px !important;
+        padding-bottom: 50px;
+    }
+    .termcond_privacypilocy h1 {
+        font-size: 32px;
+    }
+}
+
+
+/*--------------------------------------------------------------
+#  Error page
+--------------------------------------------------------------*/
+
+/* stripe card */
+.payment-outer{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 22px 15px 5px;
+    background-color: #e9e9e9;
+    position: relative;
+    margin-top:10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.payment-outer:before{
+    content: "";
+    position: absolute;
+    left: 35px;
+	top: -8px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #e9e9e9;
+}
+.payment-outer .form-group{
+    width: 33.33%;
+    padding: 0 7px;
+}
+.payment-outer .form-group.card-number-group{
+    width: 100%;
+}
+.payment-outer .form-group #card_number{
+    background-image: url('../images/cards.png');
+    background-repeat: no-repeat;
+    background-size: 120px;
+    background-position: right 10px center;
+    padding-right: 140px;
+}
+.paypal-card-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom:15px;
+    color: #ffffff;
+}
+.paypal-card-group label:first-child{
+    margin-bottom: 10px;
+}
+.form-group.btn-outer{
+    position: relative;
+}
+.form-group.btn-outer #loader{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    background-color: rgba(0,0,0,0.4);
+	border-radius: 5px;
+}
+form #loader img{
+    width: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -10px;
+    margin-left: -10px;
+}
+@media only screen and (max-width: 390px) {
+    .payment-outer{
+   	 padding: 15px 10px 0px;
+    }
+    .payment-outer .form-group #card_number{
+   	 padding-right: 100px;
+   	 background-size: 80px;
+    }
+    form select{
+   	 background-size: 12px;
+    }
+}
+/* stripe card end */
